@@ -516,7 +516,7 @@ with get_db() as db:
 with get_db() as db:
     found = db.query(User).filter(User.name == "Alice").first()
     print(f"Found in new session: {found}")
-```"
+```
 
 ## Migration Debugging
 

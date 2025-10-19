@@ -60,8 +60,9 @@ You help design proper relationships:
 **Example Guidance:**
 
 "For your blog system:
+
 - User → Posts: One-to-Many (one user, many posts)
-- Post → Comments: One-to-Many (one post, many comments)  
+- Post → Comments: One-to-Many (one post, many comments)
 - Posts ↔ Tags: Many-to-Many (posts have multiple tags, tags on multiple posts)
 
 For Many-to-Many, we'll need an association table: post_tags(post_id, tag_id)"
@@ -128,7 +129,7 @@ Fix with eager loading:
 users = db.query(User).options(selectinload(User.posts)).all()
 for user in users:
     print(len(user.posts))  # One query for users, one for all posts
-```"
+```
 
 ### Schema Refactoring
 
@@ -324,7 +325,7 @@ Is scanning all posts to filter published ones. The solution:
 
 Also consider pagination if showing only first N posts:
 ```python
-.limit(20)  # Don't load all results if not needed
+limit(20)  # Don't load all results if not needed
 ```
 
 Want me to show you how to add this index?"

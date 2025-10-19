@@ -112,7 +112,7 @@ Help users choose appropriate types:
 ### Date/Time Types
 - **DateTime**: For timestamps
   - SQLite: Stored as TEXT (ISO8601)
-  - Always use `default=datetime.utcnow` for creation time
+  - Always use `default=lambda: datetime.now(timezone.utc)` for creation time
 - **Date**: For dates only
   - SQLite: Stored as TEXT
 
@@ -196,7 +196,7 @@ class UserProfile(BaseModel):
 
 5. **Timestamps**:
    - Always include created_at and updated_at (from BaseModel)
-   - Use `default=datetime.utcnow` (NOT `datetime.utcnow()`)
+   - Use `default=lambda: datetime.now(timezone.utc)` for timezone-aware timestamps
 
 6. **Validation**:
    - Use `@validates` decorator for business logic validation
@@ -254,7 +254,7 @@ with get_db() as db:
 ## Common Pitfalls to Avoid
 
 1. **Don't use mutable defaults**: Never use `default=[]` or `default={}`
-2. **Don't call functions in defaults**: Use `default=datetime.utcnow` not `default=datetime.utcnow()`
+2. **Use lambda for callable defaults**: Use `default=lambda: datetime.now(timezone.utc)` to avoid deprecation warnings
 3. **Remember foreign key constraints**: SQLite needs PRAGMA foreign_keys enabled
 4. **Be careful with cascade**: Deleting parents can delete children unexpectedly
 5. **Index wisely**: Too many indexes slow down writes

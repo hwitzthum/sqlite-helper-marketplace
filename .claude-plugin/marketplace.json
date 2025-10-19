@@ -8,7 +8,7 @@
   "plugins": [
     {
       "name": "sqlite-helper",
-      "source": ".sqlite-helper",
+      "source": "./sqlite-helper",
       "description": "Comprehensive SQLite and SQLAlchemy development assistant with interactive commands and expert agents"
     }
   ]
