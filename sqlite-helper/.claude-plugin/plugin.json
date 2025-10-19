@@ -1,0 +1,19 @@
+{
+  "name": "sqlite-helper",
+  "description": "Best-practice SQLite database implementation assistant with SQLAlchemy support. Provides interactive guidance, code generation, and database operations.",
+  "version": "1.0.0",
+  "author": {
+    "name": "Harry Witzthum",
+    "email": "hwitzthum@caritas.ch"
+  },
+  "keywords": [
+    "sqlite",
+    "sqlalchemy",
+    "database",
+    "orm",
+    "sql"
+  ],
+  "homepage": "https://github.com/hwitzthum/sqlite-helper-marketplace",
+  "license": "MIT"
+}
+}
